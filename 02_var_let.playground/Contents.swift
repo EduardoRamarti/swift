@@ -1,18 +1,22 @@
 import UIKit
 
-let maximumNumberOfLoginAttempts = 3
+//let es una constante (las constantes no cambian su valor)
+//var es una varaible (es decir, podemos alterar su valor)
 
-var currentLoginAttempt = 0
+let maximumNumberOfLoginAttempts = 3 //asi se declara e inicializa una constante
 
+var currentLoginAttempt = 0 // asi se declara e inicializa una variable
+
+//otra manera de poder declarar e inicializar en una sola linea
 var x = 0.0, y = 0.0, z = 0.0
 
 
-var welcomeMessage : String
+var welcomeMessage : String //aqui solo estamos declarando  una variable  con su tipo de dato  (es una buena practica)
 
-welcomeMessage = "Hola, ¿que tal?"
 
-var red, green, blue : Double
+welcomeMessage = "Hola, ¿que tal?" // aqui estamos inicializando la variable que declaramos
 
+var red, green, blue : Double //declarando tres varaibles al mismo tiempo con un mismo tipo de dato 
 
 let π = 3.141592
 let 你好 : String
