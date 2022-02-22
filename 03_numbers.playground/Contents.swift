@@ -1,18 +1,26 @@
 import UIKit
 
+// el UInt son valores enteros sin signo (es decir, en ellos no existen los negativos)
 let age : UInt8 = 31
 
 let minValue = UInt8.min //2^0-1
 let maxValue = UInt8.max //2^8-1
 
-
+//La diferencia entre float y double es que:
+//Float te va a redondear en determinado numero de decimales
+//Double admite mas cantidad de decimales
 let f1: Float = 3.14159265
 let d1: Double = 3.14159265
 
+//Cuando no se decimos a swift que tipo de dato sera, el mismo lo infiere
+//por default te da los siguientes:
 let meaningOfLife = 42 //Int
 let pi = 3.14159 //Double
-let anotherPi = 3 + 0.14159 //Double
+let anotherPi = 3 + 0.14159 //Double aqui al sumar un entero y un double swift actualizara el tipo de dato.
 
+
+
+//maneras de inicializar un mismo dato (numeral)
 let decimalInteger = 17 // 1*10^1 + 7*10^0
 let binaryInteger = 0b10001 //1*2^4+0*2^3+0*2^2+0*2^1+1*2^0
 let octalInteger = 0o21 //2*8^1+1*8^0
@@ -25,8 +33,11 @@ let hexadecimalDouble = 0xC.3p0
 let paddedDouble = 000123.456
 let someNumber = 00000097.540
 
+//swift no tiene problema en usar _ para separar los ceros
 let oneMillion = 1_000_000
 let justMoreThanAMillion = 1_000_000.000_000_1
+
+
 
 //ERRORES DE TIPO DE DATO
 //let cannotBeNegative: UInt8 = -1
@@ -34,7 +45,7 @@ let justMoreThanAMillion = 1_000_000.000_000_1
 
 let twoThousand: UInt16 = 2_000
 let one: UInt8 = 1
-let twoThousandAndOne = twoThousand + UInt16(one)
+let twoThousandAndOne = twoThousand + UInt16(one) //cuando se va a hacer la operacion con variables de diferente tipo de dato, es necesario realizar el casting (el casting es el cambio de tipo de dato)
 
 let three = 3
 let decimalNumber = 0.14159
