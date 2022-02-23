@@ -1,9 +1,12 @@
 import UIKit
 
+//cuando tenemos una funcion que puede lanzarnos un error por cualquiera que sea, se debe de escribir posterior al nombre de la funcion un throws
 func canThrowError() throws{
     //aquí hay codigo que puede causar un error
 }
 
+
+//de esta manera de gestionan los errores, es decir asi llamamos una funcion que decimos que puede contener un error
 
 do{
     try canThrowError()
