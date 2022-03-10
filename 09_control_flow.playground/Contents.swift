@@ -42,7 +42,7 @@ while i <= 10 {
 }
 print(i)
 
-repeat {
+repeat { //con el repeat minimo lo hace una vez 
     i += 1
 } while i <= 10
 
