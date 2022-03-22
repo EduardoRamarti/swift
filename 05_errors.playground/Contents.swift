@@ -30,7 +30,7 @@ do{
 }
 
 
-// Aserciones (debug) y Preciondiciones (build)
+// Aserciones (debug) y Precondiciones (build)
 
 let age = -5
 //assert(age>=0, "La edad de una persona no puede ser negativa")

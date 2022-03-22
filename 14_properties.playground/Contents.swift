@@ -190,17 +190,31 @@ stepCounter.totalSteps += 1234
 
 
 struct PlayerLife{
-    var lifePercent : Int{
+    var playerName:String
+    var wepon:String
+    var life : Int = 100{
         willSet{
-
+            print("Tu vida esta en \(life)")
         }
         didSet{
-            
+            if life >= 100{
+                print("Estas completo")
+            }else if life <= 0{
+                print("GameOver")
+            }
         }
     }
 }
 
+var playerOne = PlayerLife(playerName: "Trevor", wepon: "gun", life: 50)
+playerOne.life = 35
+playerOne.life += 65
 
+
+/*
+    TYPE PROPERTIES
+    static: para crear variables de tipo de datos se hace con static, es decir, si una varaible esta marcada como estatica entonces esta sera compartida por toda la estructura, todo el enumerado o toda la clase.
+ */
 
 
 struct SomeStruct {
@@ -211,28 +225,47 @@ struct SomeStruct {
     }
 }
 
-var instanceStr = SomeStruct()
+var instanceStr = SomeStruct() //instancia de la estructura
 
 var otherInstanceStr = SomeStruct()
 
-SomeStruct.computedTypeProperty
+SomeStruct.computedTypeProperty //solo de esta manera se puede acceder a las variables estaticas, desde la seleccion de la estructura que las contiene
 
-enum SomeEnum{
+enum SomeEnum{ //los enumerados funcionan de manera similar a las estructuras
     static var storedTypeProperty = "SomeValue"
     static var computedTypeProperty: Int{
         return 5
     }
 }
 
-SomeEnum.storedTypeProperty
+SomeEnum.storedTypeProperty //accediendo a la variable estatica
 
 class SomeClass{
     static var storedTypeProperty = "Some Value"
     static var computedTypeProperty:Int{
         return -9
     }
-    
+    // AQUI es importante mencionar si quiero (en caso de que haya herencia) una clase hija cuente con la posibilidad de mutar la variable le tengo que colocar la palabra reservada class
+    //de lo contrario dicha clase no podra hacer un cambio dentro de esa variable
     class var overrideableComputedTypeProperty:Int{
         return 108
     }
 }
+
+
+//Vivimos en una casa, todoso los miembros de una familia podrian tener compartido el presupuesto de comida y que el presupuesto sea parte de las instancias de todos los miembros de la familia es decir si alguien va a comprar el pan, tome dinero del presupuesto
+
+class FamilyMembers{
+    static var dineroPresupuesto:Int = 5000{
+        willSet{
+            print("El presupuesto actual es: \(dineroPresupuesto)")
+        }
+        didSet{
+            if dineroPresupuesto <= 0{
+                print("El presupuesto se agoto")
+            }
+        }
+    }
+}
+
+
